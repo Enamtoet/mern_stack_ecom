@@ -1,10 +1,7 @@
 import { Navigate, useLocation } from 'react-router-dom'
 
-
-function CheckAuth({isAuthenticated, user, children}) {
+function CheckAuth({ isAuthenticated, user, children }) {
   const location = useLocation()
-
-  console.log(location.pathname, isAuthenticated)
 
   // If not authenticated and not on login/register pages, redirect to login
   if (
@@ -50,6 +47,5 @@ function CheckAuth({isAuthenticated, user, children}) {
   // If all checks pass, render the children components
   return <>{children}</>
 }
-
 
 export default CheckAuth

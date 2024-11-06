@@ -14,9 +14,10 @@ export default {
         bounceIn: 'bounceIn 1.5s ease-in-out infinite',
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
-        sm: 'calc(var(--radius) - 4px)',
+        sm: '0.125rem',
+        md: '0.375rem',
+        lg: '0.5rem',
+        full: '9999px',
       },
       colors: {
         // Primary Colors from the logo

@@ -18,6 +18,8 @@ import {check_Auth} from './store/auth-slice/index'
 import Listing from './pages/shopping-view/listing'
 import Products from './pages/shopping-view/products'
 import Home from './pages/shopping-view/home'
+import { Skeleton } from "@/components/ui/skeleton"
+
 
 
 
@@ -32,9 +34,9 @@ function App() {
 
 if (isLoading)
   return (
-    <div className="flex items-center justify-center h-screen text-xl font-semibold  text-green-500">
-      Loading...
-    </div>
+    <Skeleton className="w-[800px] h-[800px]" />
+    
+
   );
   console.log(isLoading, user)
   return (
