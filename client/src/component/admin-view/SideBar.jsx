@@ -2,6 +2,12 @@ import { BadgeCheck, ChartNoAxesCombined } from 'lucide-react'
 import { Fragment } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { LayoutDashboard, ShoppingBasket } from 'lucide-react'
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from '@/components/ui/sheet'
 
 const adminSidebarMenuItems = [
   {
@@ -45,10 +51,26 @@ function MenuItems() {
   )
 }
 
-function SideBar() {
+function SideBar({ open, setOpen }) {
   const navigate = useNavigate()
   return (
     <Fragment>
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetContent side="left" className="w-64 bg-white">
+          <div className="flex flex-col h-full">
+            <SheetHeader
+              onClick={() => navigate('/admin/dashboard')}
+              className="border-b pb-3"
+            >
+              <SheetTitle className="flex cursor-pointer items-center gap-3 ">
+                <ChartNoAxesCombined size={30} />
+                <h1 className="font-bold text-2xl ">Admin panel</h1>
+              </SheetTitle>
+            </SheetHeader>
+            <MenuItems />
+          </div>
+        </SheetContent>
+      </Sheet>
       <aside className="hidden w-64 flex-col border-r p-6 lg:flex">
         <div
           onClick={() => navigate('/admin/dashboard')}
