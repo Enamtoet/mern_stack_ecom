@@ -2,7 +2,7 @@ import { AlignJustify, LogOut } from 'lucide-react'
 
 function Header({ setOpen }) {
   return (
-    <header className="flex justify-between items-center px-5 py-3">
+    <header className="flex justify-between items-center px-5 py-3 border-b">
       <button
         onClick={() => setOpen(true)}
         className="bg-primaryGreenLight px-3 py-2 rounded-md text-white hover:bg-primaryGreenDark shadow-md lg:hidden sm:block"

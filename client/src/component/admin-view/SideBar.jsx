@@ -30,7 +30,7 @@ const adminSidebarMenuItems = [
   },
 ]
 
-function MenuItems() {
+function MenuItems({ setOpen }) {
   const navigate = useNavigate()
 
   return (
@@ -38,7 +38,10 @@ function MenuItems() {
       {adminSidebarMenuItems.map((menuItem) => {
         return (
           <div
-            onClick={() => navigate(menuItem.path)}
+            onClick={() => {
+              navigate(menuItem.path)
+              setOpen ? setOpen(false) : null
+            }}
             key={menuItem.id}
             className="flex items-center gap-3 text-gray-600 rounded-md px-3 py-2 cursor-pointer hover:bg-primaryGreenLight hover:text-white  "
           >
@@ -67,7 +70,7 @@ function SideBar({ open, setOpen }) {
                 <h1 className="font-bold text-2xl ">Admin panel</h1>
               </SheetTitle>
             </SheetHeader>
-            <MenuItems />
+            <MenuItems setOpen={setOpen} />
           </div>
         </SheetContent>
       </Sheet>
